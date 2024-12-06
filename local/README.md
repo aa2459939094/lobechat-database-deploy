@@ -37,7 +37,7 @@ LobeChat 作为一款`界面美观`、`交互简洁`的大模型前端，非常�
 1. clone 代码仓库
 
    ```shell
-   git clone https://github.com/dockerq/lobechat-database-deploy.git
+   git clone https://github.com/aa2459939094/lobechat-database-deploy.git
    ```
 
 2. 进入代码仓库的 local 目录
