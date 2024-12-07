@@ -16,7 +16,7 @@ services:
     image: pgvector/pgvector:pg16
     container_name: lobe-postgres
     ports:
-      - "5433:5432"
+      - "5433:5433"
     volumes:
       - "./data:/var/lib/postgresql/data"
     environment:
