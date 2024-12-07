@@ -55,7 +55,7 @@ services:
     environment:
       - "TRUST_PROXY_HEADER=false"
       - "PORT=${LOGTO_PORT}"
-      - "DB_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgresql:5433/logto"
+      - "DB_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgresql:5432/logto"
       - "ENDPOINT=http://localhost:${LOGTO_PORT}"
       - "ADMIN_ENDPOINT=http://localhost:3002"
     entrypoint: ["sh", "-c", "npm run cli db seed -- --swe && npm start"]
@@ -81,7 +81,7 @@ services:
       - "NEXT_AUTH_SECRET=NX2kaPE923dt6BL2U8e9oSre5RfoT7hg"
       - "NEXTAUTH_URL=http://localhost:${LOBE_PORT}/api/auth"
       - "LOGTO_ISSUER=http://localhost:${LOGTO_PORT}/oidc"
-      - "DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgresql:5433/${LOBE_DB_NAME}"
+      - "DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgresql:5432/${LOBE_DB_NAME}"
       - "S3_ENDPOINT=http://localhost:${MINIO_PORT}"
       - "S3_BUCKET=${MINIO_LOBE_BUCKET}"
       - "S3_PUBLIC_DOMAIN=http://localhost:${MINIO_PORT}"
