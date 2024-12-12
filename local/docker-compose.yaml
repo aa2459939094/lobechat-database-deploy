@@ -20,8 +20,8 @@ services:
     volumes:
       - "./data:/var/lib/postgresql/data"
     environment:
-      - "POSTGRES_DB=${LOBE_DB_NAME}"
-      - "POSTGRES_PASSWORD=${POSTGRES_PASSWORD}"
+      - "POSTGRES_DB=logto"
+      - "POSTGRES_PASSWORD=logto"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
@@ -55,7 +55,7 @@ services:
     environment:
       - "TRUST_PROXY_HEADER=false"
       - "PORT=${LOGTO_PORT}"
-      - "DB_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgresql:5433/logto"
+      - "DB_URL=postgresql://postgres:logto@postgresql:5432/logto"
       - "ENDPOINT=http://localhost:${LOGTO_PORT}"
       - "ADMIN_ENDPOINT=http://localhost:3002"
     entrypoint: ["sh", "-c", "npm run cli db seed -- --swe && npm start"]
